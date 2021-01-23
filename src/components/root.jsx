@@ -7,12 +7,14 @@ import {
 
 import Header from "./header";
 import Home from "./home";
+import Posts from "./posts/posts-container";
 
 const Root = () => (
     <div>
         <Header/>
         <Router>
             <Switch>
+                <Route path={"/users/:username/posts"} component={Posts}/>
                 <Route path={"/"} component={Home}/>
             </Switch>
         </Router>

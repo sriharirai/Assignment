@@ -1,5 +1,6 @@
 import React  from "react";
 import {getUsers} from "../../api"
+import UserRow from "./user-row";
 
 class UserTable extends React.Component{
     async componentDidMount (){
@@ -8,7 +9,19 @@ class UserTable extends React.Component{
     }
 
     render() {
-        return (<div>User table</div>)
+        const users = this.props.users || [];
+        return (<div>
+            <table>
+                <thead>
+                    <th>name</th>
+                    <th>company</th>
+                    <th>blog posts</th>
+                </thead>
+                <tbody>
+                {users.map(user => <UserRow user={user}/>)}
+                </tbody>
+            </table>
+        </div>)
     }
 }
 
