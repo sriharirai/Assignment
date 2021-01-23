@@ -14,7 +14,7 @@ const Root = () => (
         <Header/>
         <Router>
             <Switch>
-                <Route path={"/users/:username/posts"} component={Posts}/>
+                <Route path={"/users/:id/posts"} component={Posts}/>
                 <Route path={"/"} component={Home}/>
             </Switch>
         </Router>

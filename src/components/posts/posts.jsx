@@ -1,9 +1,15 @@
 import React  from "react";
+import {getPosts} from "../../api";
 
 class Posts extends React.Component{
+    async componentDidMount (){
+        const posts = await getPosts(this.props.match.params.id);
+        this.props.updatePosts(posts);
+    }
+
     render() {
         return (<div>
-           posts by {this.props.match.params.username}
+            {JSON.stringify(this.props.posts)}
         </div>)
     }
 }
