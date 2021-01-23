@@ -8,6 +8,10 @@ export const HeaderDiv = styled.div`
   padding: 0.5em 2em;
 `
 
+export const Body = styled.div`
+  padding:0 2em;
+`
+
 export const RentomojoLogoContainer = styled.img`
   width: 180px;
   height: 40px;
