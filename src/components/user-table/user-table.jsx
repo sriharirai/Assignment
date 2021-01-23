@@ -1,10 +1,10 @@
 import React  from "react";
-import {getUsers} from "../api"
+import {getUsers} from "../../api"
 
 class UserTable extends React.Component{
     async componentDidMount (){
         const users = await getUsers();
-        console.log(users);
+        this.props.updateUsers(users);
     }
 
     render() {
