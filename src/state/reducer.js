@@ -1,9 +1,11 @@
 import {createReducer} from "@reduxjs/toolkit";
-import {updatePosts, updateUsers} from "./action";
+import {updateComments, updatePost, updatePosts, updateUsers} from "./action";
 
 const initialState = {
     users:[],
-    posts:[]
+    posts:[],
+    post:{},
+    comments:[]
 }
 
 export default createReducer(initialState,{
@@ -12,5 +14,11 @@ export default createReducer(initialState,{
     },
     [updatePosts] : (state,action) => {
         state.posts = action.payload.posts;
-    }
+    },
+    [updatePost] : (state,action) => {
+        state.post = action.payload.post;
+    },
+    [updateComments] : (state,action) => {
+        state.comments = action.payload.comments;
+    },
 })

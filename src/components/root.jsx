@@ -8,6 +8,7 @@ import {
 import Header from "./header";
 import Home from "./home";
 import Posts from "./posts/posts-container";
+import Post from "./post/post-container";
 
 const Root = () => (
     <div>
@@ -15,6 +16,7 @@ const Root = () => (
         <Router>
             <Switch>
                 <Route path={"/users/:id/posts"} component={Posts}/>
+                <Route path={"/posts/:id"} component={Post}/>
                 <Route path={"/"} component={Home}/>
             </Switch>
         </Router>
